@@ -1,11 +1,59 @@
 //Simulador de un sitio para publicar vehiculos
 
+//Ingreso al sitio
+class Persona{
+    constructor(nombre, apellido, mail, edad){
+        this.nombre = nombre.toLowerCase();
+        this.apellido = apellido.toLowerCase();
+        this.mail = mail.toLowerCase();
+        this.edad = edad.toLowerCase();
+    }
+}
+
+let nombre, apellido, mail, edad
+
+do{
+    nombre = prompt("Ingrese su nombre").toLowerCase();
+
+    if(!isNaN(nombre)){
+        alert("Ingrese solo letras por favor")
+    }
+} while(!isNaN(nombre));
+
+do{
+    apellido = prompt("Ingrese su apellido").toLowerCase();
+
+    if(!isNaN(apellido)){
+        alert("Ingrese solo letras por favor")
+    }
+} while(!isNaN(apellido));
+
+do{
+    mail = prompt("Ingrese su correo electrónico").toLowerCase();
+
+    if(!isNaN(mail)){
+        alert("Ingrese un correo electrónico válido")
+    }
+} while(!isNaN(mail));
+
+do{
+    edad = parseInt(prompt("Ingrese su edad"));
+
+    if(isNaN(edad)){
+        alert("Ingrese valores válidos por favor")
+    } else if(edad < 18){
+        alert("Debe ser mayor de edad para ingresar")
+    }
+} while ((isNaN(edad)) || (edad<18));
+
+//Ingreso de vehiculo
+
 //Clase
 class Automotor {
     constructor(clase, marca, version, modelo, valor) {
         this.clase = clase.toLowerCase();
-        this.marca = marca;
-        this.version = version;
+        this.marca = marca.toLowerCase();
+        this.version = version.toLowerCase();
         this.modelo = parseInt(modelo);
         this.valor = parseFloat(valor) * 1.03;
     }
