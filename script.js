@@ -57,6 +57,14 @@ class Automotor {
         this.modelo = parseInt(modelo);
         this.valor = parseFloat(valor) * 1.03;
     }
+
+    vehiculoImportado(valor){
+        console.log(`El ${this.marca} ${this.version} es un vehículo importado. Por lo tanto su valor se incrementa a ${this.valor * 1.20}`)
+    }
+
+    valorCuotaPlan18(valor){
+        console.log(`Si este vehiculo fuera comprado a través del plan de 18 cuotas, el valor de las mismas sería ${parseInt((this.valor * 0.98) / 18)}`)
+    }
 }
 
 //Algunos vehiculos definidos
@@ -210,3 +218,6 @@ switch(respuesta){
         console.log(precio.sort((a,b) => b-a))
         break;
 }
+
+vehiculo1.vehiculoImportado()
+vehiculo2.valorCuotaPlan18()
